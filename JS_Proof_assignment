@@ -1,0 +1,36 @@
+let nfts = [];
+
+function mintNFT(name,type, age, year) {
+    const nft = {
+        name: name,
+        type: type,
+        age: age,
+        year: year
+    };
+    nfts.push(nft);
+    console.log(`Minted NFT: ${name}`);
+}
+
+function listNFTs() {
+    nfts.forEach((nft, index) => {
+        console.log(`NFT #${index + 1}`);
+        console.log(`Name: ${nft.name}`);
+        console.log(`Type: ${nft.type}`);
+        console.log(`Age: ${nft.age}`);
+        console.log(`Year: ${nft.year}`);
+        console.log( );
+    });
+}
+
+function getTotalSupply() {
+    return nfts.length;
+}
+
+mintNFT("nft1", "MusicNFTs",20,1985);
+mintNFT("nft2","GamingNFTs",34,2004);
+mintNFT("nft3","ArtNFTs",40,2023);
+
+
+listNFTs();
+
+console.log(`Total NFTs minted: ${getTotalSupply()}`);
